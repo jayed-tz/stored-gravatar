@@ -1,6 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Md5} from 'ts-md5/dist/md5';
-import {BehaviorSubject, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 
 @Component({
@@ -53,11 +53,6 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
     this.convertImgToBase64URL(this.generateGravatarUrl());
   }
 
-  ngOnDestroy(): void {
-    this.unsubscribe.next();
-    this.unsubscribe.complete();
-  }
-
   private generateGravatarUrl() {
     let emailHash: string | Int32Array;
     emailHash = Md5.hashStr(this.email);
@@ -73,7 +68,7 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
     const self = this;
     const img = new Image();
     img.crossOrigin = 'Anonymous';
-    img.onload = function () {
+    img.onload = () => {
       let canvas = <HTMLCanvasElement>document.createElement('CANVAS');
       const ctx = canvas.getContext('2d');
       canvas.height = img.height;
@@ -81,15 +76,13 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
       ctx.drawImage(img, 0, 0);
       const dataURL = canvas.toDataURL();
       canvas = null;
-      if (typeof window.localStorage !== 'undefined') {
-        window.localStorage.setItem(self.gravatarKey, dataURL);
-      }
+      window.localStorage.setItem(self.gravatarKey, dataURL);
       self.imgSubject.next(dataURL);
     };
     img.onerror = (err) => {
       self.fallBackText = self.getFallbackText();
       self.textFallbackVisible = true;
-    }
+    };
     img.src = url;
 
   }
@@ -110,5 +103,10 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
       return false;
     }
     return true;
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe.next();
+    this.unsubscribe.complete();
   }
 }
