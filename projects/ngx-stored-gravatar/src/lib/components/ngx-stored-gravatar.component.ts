@@ -17,6 +17,21 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
   url: any;
   textFallbackVisible = false;
   fallBackText: string;
+  defaultStyle = {
+    'width': '60px',
+    'height': '60px',
+    'display': 'flex',
+    'align-items': 'center',
+    'justify-content': 'center',
+    'border-radius': '50%',
+    'border': '1px solid rgba(0,0,0,.10)',
+    'background': '#fafafa',
+    'color': '#aaaaaa',
+    'text-transform': 'uppercase',
+    'font-weight': 'normal',
+    'font-size': '13px',
+    'line-height': 'normal'
+  };
   @Input() email: string;
   @Input() userName: string;
   @Input() style: any;
@@ -31,7 +46,7 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.style = this.style ? this.style : {};
+    this.style = this.style ? this.style : this.defaultStyle;
     this.size = this.size ? this.size : 200;
     if (!this.useLocalStore) {
       this.subscribeToImgUrl();
