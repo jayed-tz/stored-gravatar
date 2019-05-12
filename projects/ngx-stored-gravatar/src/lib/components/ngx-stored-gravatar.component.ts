@@ -11,17 +11,17 @@ import {takeUntil} from 'rxjs/internal/operators';
 export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
 
   private unsubscribe: Subject<void> = new Subject();
-  private url: any;
   private gravatarKey: string;
   private imgSubject = new Subject();
+  private gravatarBaseUrl = '//www.gravatar.com/avatar/';
+  url: any;
+  textFallbackVisible = false;
+  fallBackText: string;
   @Input() email: string;
   @Input() userName: string;
   @Input() style: any;
   @Input() size: number;
   @Input() useLocalStore = true;
-  private gravatarBaseUrl = '//www.gravatar.com/avatar/';
-  textFallbackVisible = false;
-  fallBackText: string;
 
   constructor() {
   }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgxStoredGravatarComponent } from './ngx-stored-gravatar.component';
+import { NgxStoredGravatarComponent } from './components/ngx-stored-gravatar.component';
 import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [
