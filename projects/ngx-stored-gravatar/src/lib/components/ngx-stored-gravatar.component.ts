@@ -33,7 +33,7 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
     'line-height': 'normal'
   };
   @Input() email: string;
-  @Input() userName: string;
+  @Input() name: string;
   @Input() style: any;
   @Input() size: number;
   @Input() useLocalStore = true;
@@ -103,7 +103,7 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
   }
 
   getFallbackText() {
-    const text = this.userName ? this.userName : this.email;
+    const text = this.name ? this.name : this.email;
     const splittedText = text.split(' ');
     if (splittedText.length > 1) {
       return `${splittedText[0].substr(0, 1)}${splittedText[1].substr(0, 1)}`;
