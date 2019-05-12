@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "ngx-stored-gravatar": {
+      "root": "projects/ngx-stored-gravatar",
+      "sourceRoot": "projects/ngx-stored-gravatar/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-stored-gravatar/tsconfig.lib.json",
+            "project": "projects/ngx-stored-gravatar/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ngx-stored-gravatar/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-stored-gravatar/src/test.ts",
+            "tsConfig": "projects/ngx-stored-gravatar/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-stored-gravatar/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-stored-gravatar/tsconfig.lib.json",
+              "projects/ngx-stored-gravatar/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "stored-gravatar"
