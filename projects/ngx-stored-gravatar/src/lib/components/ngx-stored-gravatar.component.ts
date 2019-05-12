@@ -91,9 +91,9 @@ export class NgxStoredGravatarComponent implements OnInit, OnDestroy {
     const text = this.userName ? this.userName : this.email;
     const splittedText = text.split(' ');
     if (splittedText.length > 1) {
-      return `${text[0].substr(0, 1)}${text[1].substr(0, 1)}`;
+      return `${splittedText[0].substr(0, 1)}${splittedText[1].substr(0, 1)}`;
     } else {
-      return text[0].substr(0, 1);
+      return splittedText[0].substr(0, 1);
     }
   }
 
