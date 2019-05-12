@@ -1,11 +1,27 @@
 {
   "name": "ngx-stored-gravatar",
-  "version": "0.0.1",
+  "description": "A component that stores the gravatar image in the local storage of the browser. This comes in handy particularly in the cases where avatars may show up repeatedly, for instance, in a chat component.",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jayed-tz/stored-gravatar.git"
+  },
+  "author": "jayed talukder <jayed.jt@gmail.com>",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
   } ,
   "dependencies": {
     "ts-md5": "^1.2.4"
-  }
+  },
+  "keywords": [
+    "ngx-stored-gravatar",
+    "avatar",
+    "gravatar",
+    "stored avatar",
+    "local storage",
+    "Angular avatar",
+    "Angular gravatar"
+  ]
 }
