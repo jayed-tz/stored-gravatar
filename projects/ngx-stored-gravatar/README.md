@@ -55,6 +55,8 @@ After importing the `NgxStoredGravatarModule`, you can use the `ngxStoredGravata
 <ngx-stored-gravatar [email]="'test@gmail.com'"></ngx-stored-gravatar> 
 ``` 
 
+**The `style` input parameter should be used to set the css properties like `width` and `height`.** 
+
 ## Demo
 
 Click [here](https://stackblitz.com/edit/ngx-stored-gravatar) to see a few variety of the component. The `style` input can be used to completely modify the style of the image/text.
@@ -66,7 +68,7 @@ Click [here](https://stackblitz.com/edit/ngx-stored-gravatar) to see a few varie
  
   |   Attribute   |      Type      | Required  | Default |                                              Description                              |  
 | ------------- | ----------------- | ---------- | ---------- | ----------------------------------------------------------------------------------------- |  
-| `email`          | *string* | requried | (*empty string*)| Email associated with the Gravatar. |  
+| `email`          | *string* | required | (*empty string*)| Email associated with the Gravatar. |  
 | `name`            | *string* | optional | (*empty string*) | If the Gravatar is not found, the first name & the last name supplied via `name` will be used as a fallback.                                                     |  
 | `useLocalStore` | *boolean* | optional | `true`      | If `false`, Gravatar image will nt be stored in the browser's local storage.    |  
 | `size`           | *number* | optional | `200`         | Size of the Gravatar image that is retrieved. This does not necessarily mean the size displayed in the UI.                                                                          |  
