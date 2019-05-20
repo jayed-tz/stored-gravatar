@@ -59,7 +59,7 @@ After importing the `NgxStoredGravatarModule`, you can use the `ngxStoredGravata
 
 Click [here](https://stackblitz.com/edit/ngx-stored-gravatar) to see a few variety of the component. The `style` input can be used to completely modify the style of the image/text.
 
-![usage](https://cdn1.imggmi.com/uploads/2019/5/20/5d676ad4b79d214a2ec7dfb5779da247-full.png)
+![usage](https://i.ibb.co/wJpJj3g/1123.png)
 
 
 ## Input Parameters  
