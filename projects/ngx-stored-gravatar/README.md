@@ -3,15 +3,18 @@
  
 # ngx-stored-gravatar    
  A component that stores the gravatar image in the local storage of the browser. This comes in handy particularly in the cases where avatars may show up repeatedly, for instance, in a chat component.    
-    
-    
+
+![sample](https://i.ibb.co/nrzFwqP/gravatar.png)
+   
 ## Installation    
  Install `ngx-stored-gravatar` via NPM, using the command below:    
     
 ### NPM    
- ```shell npm install --save ngx-stored-gravatar ```    
+ ```shell 
+ npm install --save ngx-stored-gravatar 
+ ```    
     
- ## Getting started    
+## Getting started    
  Import the `NgxStoredGravatarModule` in your root application module `AppModule` or any other module you need to use the component:    
     
 ```typescript    
@@ -36,7 +39,7 @@
 export class AppModule { }    
  ``` 
 
-## Use in component 
+## Using it in a component 
 
 After importing the `NgxStoredGravatarModule`, you can use the `ngxStoredGravatar` component as below:    
     
@@ -52,6 +55,13 @@ After importing the `NgxStoredGravatarModule`, you can use the `ngxStoredGravata
 <ngx-stored-gravatar [email]="'test@gmail.com'"></ngx-stored-gravatar> 
 ``` 
 
+## Demo
+
+Click [here](https://stackblitz.com/edit/ngx-stored-gravatar) to see a few variety of the component. The `style` input can be used to completely modify the style of the image/text.
+
+![usage](https://cdn1.imggmi.com/uploads/2019/5/20/5d676ad4b79d214a2ec7dfb5779da247-full.png)
+
+
 ## Input Parameters  
  
   |   Attribute   |      Type      | Required  | Default |                                              Description                              |  
@@ -66,4 +76,4 @@ After importing the `NgxStoredGravatarModule`, you can use the `ngxStoredGravata
   
   
 ## License 
- This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+ This project is licensed under the MIT License.
